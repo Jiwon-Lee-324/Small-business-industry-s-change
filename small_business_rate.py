@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 f = open('Properties_Receiving_SBR.csv', 'r', encoding='utf-8')
 rdr = csv.reader(f)
 content = list()
@@ -24,6 +25,9 @@ for i in property:
 counts = sorted(counts.items(),reverse=True, key=lambda item: item[1])
 counts = counts[:20]
 
+
+df = pd.read_csv('f2019.csv', sep='\t', engine='python')
+print(df)
 
 
 print(lst_property)
